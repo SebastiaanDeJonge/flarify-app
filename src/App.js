@@ -15,17 +15,7 @@ class App extends Component {
     this.state = {
       summary: {
         startDate: 'January 1st 2016',
-        endDate: 'January 1st 2017',
-        totalSolarFlares: 27,
-        mostPowerful: {
-          beginTime: 'July 23rd 2016',
-          classType: 'M'
-        },
-        mostPowerfulPicometre: '7.6E-5',
-        mostActiveRegion: {
-          region: 12497,
-          totalSolarFlares: 6
-        }
+        endDate: 'January 1st 2017'
       }
     };
 
