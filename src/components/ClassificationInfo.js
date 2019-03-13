@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
-class ClassificationInfo extends Component {
+export default class ClassificationInfo extends Component {
+
     render() {
+
         return (
             <div className="widget">
                 <h2>Classification</h2>
@@ -47,5 +49,3 @@ class ClassificationInfo extends Component {
         )
     }
 }
-
-export default ClassificationInfo;
