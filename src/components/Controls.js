@@ -9,8 +9,8 @@ export default class Controls extends Component {
     };
 
     constructor(props) {
-        super(props);
 
+        super(props);
         this.state = {
             endDate: props.endDate,
             errorMessage: '',
@@ -50,12 +50,14 @@ export default class Controls extends Component {
     };
 
     triggerUpdate = (startDate, endDate) => {
+
         if (this.state.errorMessage.length === 0) {
             this.props.updateHandler(startDate, endDate);
         }
     };
 
     render() {
+
         return (
             <form action="" id="controls" method="post">
                 <div className="controls--input">

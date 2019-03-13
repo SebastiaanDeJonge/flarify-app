@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ClassificationInfo from './components/ClassificationInfo';
 import Controls from './components/Controls';
 import Footer from './components/Footer';
-import Summary from "./components/Summary";
+import Summary from './components/Summary';
 import DateHelper from './utilities/DateHelper';
 import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 import './App.css';

@@ -55,13 +55,16 @@ export default class DateHelper {
             .format(DateHelper.config.format.readable);
     }
 
+    static objectToSimpleDate(date) {
+
+        return moment(date)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .format(DateHelper.config.format.simple);
+    }
+
     static validateRange(startDate, endDate) {
+
         let errorMessage = '';
-
-        console.log('------------------------------');
-        console.log(typeof(startDate));
-        console.log(typeof(endDate));
-
         if (startDate < DateHelper.config.minimumDate || endDate < DateHelper.config.minimumDate) {
             errorMessage = 'Unfortunately there is no data available before ' +
                 DateHelper.objectToReadableDate(DateHelper.config.minimumDate);

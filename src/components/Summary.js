@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
+import DateHelper from '../utilities/DateHelper';
 
 export default class Summary extends Component {
 
     constructor(props) {
-        super(props);
 
-        // @todo Validate summary and set hasResults based on that
+        super(props);
         this.state = {
-            hasResults: true,
+            hasResults: props.hasResults,
             summary: props.summary
         }
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    componentWillReceiveProps(nextProps) {
 
         this.setState({
             hasResults: true,
@@ -21,6 +21,7 @@ export default class Summary extends Component {
     }
 
     render() {
+
         if (this.state.hasResults) {
             return (
 
