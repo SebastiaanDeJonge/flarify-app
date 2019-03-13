@@ -6,30 +6,46 @@ export default class DateHelper {
         format: {
             simple: 'YYYY-MM-DD',
             datePicker: 'yyyy-MM-dd',
-            readable: 'MMMM Do YYYY',
+            readable: 'MMMM Do YYYY'
         },
         minimumDate: moment('2010-04-03', 'YYYY-MM-DD').toDate(),
-        maximumDate: moment().toDate()
+        maximumDate: moment().toDate(),
+        timezoneOffset: moment().utcOffset()
     };
 
     static readableDateToObject(date) {
 
-        return moment(date, DateHelper.config.format.readable).toDate();
-    }
-
-    static simpleDateToReadableDate(date) {
-
-        return moment(date, DateHelper.config.format.simple).format(DateHelper.config.format.readable);
+        return moment(date, DateHelper.config.format.readable)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .toDate();
     }
 
     static readableDateToSimpleDate(date) {
 
-        return moment(date, DateHelper.config.format.readable).format(DateHelper.config.format.simple);
+        return moment(date, DateHelper.config.format.readable)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .format(DateHelper.config.format.simple);
+    }
+
+    static simpleDateToReadableDate(date) {
+
+        return moment(date, DateHelper.config.format.simple)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .format(DateHelper.config.format.readable);
+    }
+
+    static simpleDateToObject(date) {
+
+        return moment(date, DateHelper.config.format.simple)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .toDate();
     }
 
     static objectToReadableDate(date) {
 
-        return moment(date).format(DateHelper.config.format.readable);
+        return moment(date)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .format(DateHelper.config.format.readable);
     }
 
     static validateRange(startDate, endDate) {
