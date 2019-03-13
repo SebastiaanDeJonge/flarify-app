@@ -52,19 +52,8 @@ class App extends Component {
                 <div className="col col-sm-12 col-lg-6" id="summary">
                   <Summary summary={this.state.summary} refresh={this.updateRange}/>
                 </div>
-                <div className="col col-sm-12 col-lg-6" id="regions">
-                </div>
-              </div>
-
-              <div className="row">
-                <div className="col col-sm-12 col-lg-4" id="classification-info">
-                  <ClassificationInfo/>
-                </div>
-                <div className="col col-sm-12 col-lg-4" id="classification-table">
-
-                </div>
-                <div className="col col-sm-12 col-lg-4" id="classification-chart">
-
+                <div className="col col-sm-12 col-lg-6" id="classifiction-info">
+                    <ClassificationInfo/>
                 </div>
               </div>
 
