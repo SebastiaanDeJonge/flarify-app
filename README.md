@@ -25,6 +25,11 @@ After that you are ready to. Simply run this command to start the local server:
 You can reach the application through the following URL: 
 http://localhost:3000/
 
+### Stack
+* ReactJS
+    * JSX Templates 
+* Bootstrap
+
 ### Roadmap & ToDos
 * Add more React components
     * Overview of the most powerful flares
