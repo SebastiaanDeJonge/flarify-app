@@ -13,6 +13,13 @@ export default class DateHelper {
         timezoneOffset: moment().utcOffset()
     };
 
+    static utcToReadableDate(date) {
+
+        return moment.utc(date)
+            .utcOffset(DateHelper.config.timezoneOffset)
+            .format(DateHelper.config.format.readable);
+    }
+
     static readableDateToObject(date) {
 
         return moment(date, DateHelper.config.format.readable)

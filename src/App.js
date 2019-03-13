@@ -30,15 +30,17 @@ class App extends Component {
     };
 
     this.updateRange = this.updateRange.bind(this);
+    this.updateRange(DateHelper.simpleDateToObject('2016-01-01'), DateHelper.simpleDateToObject('2017-01-01'));
   }
 
   updateRange(startDate, endDate) {
 
-    let newSummary = this.state.summary;
-    newSummary.startDate = DateHelper.simpleDateToReadableDate(startDate);
-    newSummary.endDate = DateHelper.simpleDateToReadableDate(endDate);
+    let formattedStartDate = DateHelper.objectToSimpleDate(startDate),
+        formattedEndDate = DateHelper.objectToSimpleDate(endDate);
 
-    this.setState({summary: newSummary});
+    fetch('http://localhost:8081/summary/between/' + formattedStartDate + '/and/' + formattedEndDate)
+        .then(response => response.json())
+        .then(data => this.setState({ summary: data }));
   }
 
   render() {
